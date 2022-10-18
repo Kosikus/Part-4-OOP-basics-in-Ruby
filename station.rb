@@ -1,3 +1,8 @@
+# Курс: "Основы Ruby [Полная програмаа - 2022]"
+# Задание: "Основы ООП в Ruby"
+# Класс "Station"
+# Студент: Константин Голуб (Kos)
+
 class Station
   attr_reader :name, :trains
 

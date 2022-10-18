@@ -1,3 +1,8 @@
+# Курс: "Основы Ruby [Полная програмаа - 2022]"
+# Задание: "Основы ООП в Ruby"
+# Класс "Route"
+# Студент: Константин Голуб (Kos)
+
 class Route
   attr_reader :departure_station, :arrival_station, :stations
 
