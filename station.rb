@@ -8,33 +8,23 @@ class Station
 
   def initialize(name)
     @name = name # имя станции
-    @trains = [] # массив (объектов) всех поездов на станции на текущий момент
+    @trains = [] # массив всех поездов (объектов) на станции на текущий момент
   end
 
   # Приём поезда на станцию
+  # добавление нового поезда на станцию, если такого поезда ещё нет на станции
   def accept_train(train)
-    # добавление нового поезда на станцию, если такого поезда ещё нет на станции
     @trains << train unless @trains.include?(train)
   end
 
   # Массив всех поездов на станции по типу ("passenger"/"cargo")
   def trains_by_type(type)
-    case type.downcase
-    when "passenger"
-      trains.select { |train| train.type.casecmp("passenger") }
-    when "cargo"
-      trains.select { |train| train.type.casecmp("cargo") }
-    end
+    trains.select { |train| train.type == type }
   end
 
   # Количество поездов на станции по типу "passenger"/"cargo"
   def trains_amount_by_type(type)
-    case type.downcase
-    when "passenger"
-      trains.select { |train| train.type.casecmp("passenger") }.size
-    when "cargo"
-      trains.select { |train| train.type.casecmp("cargo") }.size
-    end
+    trains.count { |train| train.type == type }
   end
 
   # Отправление поезда

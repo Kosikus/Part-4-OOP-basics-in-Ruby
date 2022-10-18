@@ -60,7 +60,7 @@ class Train
     end
   end
 
-  # Следующая станция
+  # Определение следующей станции
   def next_station
     if @current_station != @route.arrival_station
       @route.stations[@route.stations.index(@current_station) + 1]
@@ -69,7 +69,7 @@ class Train
     end
   end
 
-  # Предыдущая станция
+  # Определение предыдущей станции
   def previous_station
     if @current_station != @route.departure_station
       @route.stations[@route.stations.index(@current_station) - 1]
